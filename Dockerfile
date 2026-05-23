@@ -1,5 +1,5 @@
-FROM alpine:latest
+FROM teddysun/xray
 
-RUN apk add --no-cache bash curl
+COPY config.json /etc/xray/config.json
 
-CMD ["sh", "-c", "while true; do echo VPS Running; sleep 60; done"]
+CMD ["xray", "-config", "/etc/xray/config.json"]
