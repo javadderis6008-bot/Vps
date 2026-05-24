@@ -1,7 +1,5 @@
 {
   "log": {
-    "access": "/dev/null",
-    "error": "/dev/null",
     "loglevel": "warning"
   },
 
@@ -30,40 +28,13 @@
             "Host": "vps-production-b208.up.railway.app"
           }
         }
-      },
-
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
       }
     }
   ],
 
   "outbounds": [
     {
-      "protocol": "freedom",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "blocked"
+      "protocol": "freedom"
     }
-  ],
-
-  "routing": {
-    "domainStrategy": "AsIs",
-    "rules": [
-      {
-        "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "blocked"
-      }
-    ]
-  }
+  ]
 }
