@@ -1,8 +1,34 @@
-"clients": [
-  {
-    "id": "8f2c3b3e-7b7f-4f72-a9d0-1f8f3b7d2a11"
+{
+  "log": {
+    "loglevel": "warning"
   },
-  {
-    "id": "1a2b3c4d-1111-4444-8888-123456789abc"
-  }
-]
+  "inbounds": [
+    {
+      "port": 3000,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "8f2c3b3e-7b7f-4f72-a9d0-1f8f3b7d2aaa"
+          },
+          {
+            "id": "1a2b3c4d-1111-4444-8888-123456789abc"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ]
+}
