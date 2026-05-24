@@ -4,20 +4,24 @@
   },
   "inbounds": [
     {
-      "port": 3000,
+      "port": 2095,
       "protocol": "vless",
       "settings": {
         "clients": [
           {
-            "id": "d2f8a741-6c3e-4b19-a9d2-7e1f5c8b4421"
+            "id": "b7c91d42-5e8f-4ab1-92d7-6c3f1e9b8822"
           }
         ],
         "decryption": "none"
       },
       "streamSettings": {
         "network": "ws",
+        "security": "none",
         "wsSettings": {
-          "path": "/"
+          "path": "/",
+          "headers": {
+            "Host": "swde4.darreyeasrar.ir"
+          }
         }
       }
     }
