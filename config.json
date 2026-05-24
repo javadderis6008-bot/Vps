@@ -10,6 +10,9 @@
         "clients": [
           {
             "id": "eab695e2-5dfd-4305-a492-85300d12b33b"
+          },
+          {
+            "id": "c7a9d3f2-8e41-4cbb-a6d2-91f4d7a2b551"
           }
         ],
         "decryption": "none"
