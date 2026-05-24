@@ -13,13 +13,15 @@
           },
           {
             "id": "1a2b3c4d-1111-4444-8888-123456789abc"
+          },
+          {
+            "id": "7c9d8a11-2222-4444-9999-abcdef123456"
           }
         ],
         "decryption": "none"
       },
       "streamSettings": {
         "network": "ws",
-        "security": "none",
         "wsSettings": {
           "path": "/"
         }
