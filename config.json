@@ -1,34 +1,69 @@
 {
   "log": {
+    "access": "/dev/null",
+    "error": "/dev/null",
     "loglevel": "warning"
   },
+
   "inbounds": [
     {
-      "port": 2095,
+      "listen": "0.0.0.0",
+      "port": 3000,
       "protocol": "vless",
+
       "settings": {
         "clients": [
           {
-            "id": "b7c91d42-5e8f-4ab1-92d7-6c3f1e9b8822"
+            "id": "8f2c3b3e-7b7f-4f72-a9d0-1f2e3d4c5b6a"
           }
         ],
         "decryption": "none"
       },
+
       "streamSettings": {
         "network": "ws",
         "security": "none",
+
         "wsSettings": {
-          "path": "/",
+          "path": "/vless",
           "headers": {
-            "Host": "swde4.darreyeasrar.ir"
+            "Host": "vps-production-b208.up.railway.app"
           }
         }
+      },
+
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
       }
     }
   ],
+
   "outbounds": [
     {
-      "protocol": "freedom"
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "blocked"
     }
-  ]
+  ],
+
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  }
 }
