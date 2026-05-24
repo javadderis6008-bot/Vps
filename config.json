@@ -4,27 +4,21 @@
   },
   "inbounds": [
     {
-      "port": 2095,
+      "port": 443,
       "protocol": "vless",
       "settings": {
         "clients": [
           {
-            "id": "eab695e2-5dfd-4305-a492-85300d12b33b"
-          },
-          {
-            "id": "7d91f3a2-5e4b-4cc1-9f1d-2b77a8c91234"
+            "id": "8f2c3b3e-7b7f-4f72-a9d0-1f8f3b7d2a11"
           }
         ],
         "decryption": "none"
       },
       "streamSettings": {
         "network": "ws",
-        "security": "none",
+        "security": "tls",
         "wsSettings": {
-          "path": "/",
-          "headers": {
-            "Host": "swde4.darreyeasrar.ir"
-          }
+          "path": "/"
         }
       }
     }
