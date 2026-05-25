@@ -5,12 +5,15 @@
 
   "inbounds": [
     {
+      "listen": "0.0.0.0",
       "port": 8080,
       "protocol": "vless",
+
       "settings": {
         "clients": [
           {
-            "id": "7f6b1c32-9d4a-4c71-a2f5-8d5f1e7a9c11"
+            "id": "e4c2c6f7-9c85-4c90-a8e1-b7d8a4f0c9d2",
+            "flow": ""
           }
         ],
         "decryption": "none"
@@ -18,8 +21,13 @@
 
       "streamSettings": {
         "network": "ws",
+        "security": "none",
+
         "wsSettings": {
-          "path": "/vpn"
+          "path": "/fastvpn",
+          "headers": {
+            "Host": "vps-production-b208.up.railway.app"
+          }
         }
       },
 
@@ -43,5 +51,18 @@
       "protocol": "blackhole",
       "tag": "blocked"
     }
-  ]
+  ],
+
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  }
 }
