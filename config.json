@@ -5,14 +5,12 @@
 
   "inbounds": [
     {
-      "listen": "0.0.0.0",
-      "port": 3000,
+      "port": 8080,
       "protocol": "vless",
-
       "settings": {
         "clients": [
           {
-            "id": "8f2c3b3e-7b7f-4f72-a9d0-1f2e3d4c5b6a"
+            "id": "7f6b1c32-9d4a-4c71-a2f5-8d5f1e7a9c11"
           }
         ],
         "decryption": "none"
@@ -20,21 +18,30 @@
 
       "streamSettings": {
         "network": "ws",
-        "security": "none",
-
         "wsSettings": {
-          "path": "/vless",
-          "headers": {
-            "Host": "vps-production-b208.up.railway.app"
-          }
+          "path": "/vpn"
         }
+      },
+
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
       }
     }
   ],
 
   "outbounds": [
     {
-      "protocol": "freedom"
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "blocked"
     }
   ]
 }
